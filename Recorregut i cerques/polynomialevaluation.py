@@ -1,87 +1,21 @@
+"""
+La entrada es un número (x) y los coeficientes de un polinomio,
+donde p(x) = co*(x**0)+ c1*(x**1)... cn*(x**n).
+La salida imprime el resultado de operar x en el polinomio con 
+4 dígitos después de la coma. 
 
 """
-Write a program that reads a number 
-x
- and a polynomial 
-p
-(
-z
-)
-=
-c
-0
-z
-0
-+
-c
-1
-z
-1
-+
-⋯
-+
-c
-n
-z
-n
-, and computes 
-p
-(
-x
-)
-.
 
-Input
-Input consists of a real number 
-x
- followed by the description of the polynomial 
-p
-(
-z
-)
-: the real coefficients 
-c
-0
-, 
-c
-1
-, …, 
-c
-n
- in this order. (The first sample input/output corresponds to the evaluation of 
-p
-(
-z
-)
-=
-3
-+
-4
-z
-+
-5
-z
-2
- at 
-x
-=
-2
-.)
+import yogi
+x = yogi.read(float)
+resultado=0
+potencia=0
 
-Output
-Print 
-p
-(
-x
-)
- with 4 digits after the decimal point.
 
-Public test cases 
-Input
+for coeficiente in yogi.tokens(float):
+    resultado = coeficiente* (x**potencia) +resultado
+    potencia = potencia + 1
+print(f"{resultado:.4f}")
 
-2
-3 4 5
-Output
 
-31.0000
-"""
+
