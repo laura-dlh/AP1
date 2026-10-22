@@ -1,17 +1,16 @@
-import yogi
+from yogi import read
 
-def prefixed_expression()-> int:
+def prefixed_expression () -> int:
 
-    for token in yogi.tokens(str):
-        a = prefixed_expression()
-        b = prefixed_expression()
-        if token=="*":
-           return a * b
-        elif token=="+":
-            return a + b
-        elif token=="-":
-            return a - b
-        return(int(str))
-    
+    token = read(str)
+
+    if token == "+":
+        return prefixed_expression() + prefixed_expression()
+    elif token == "-":
+        return prefixed_expression() - prefixed_expression()
+    elif token == "*":
+        return prefixed_expression() * prefixed_expression()
+    else:
+        return int(token)
 
 print(prefixed_expression())
