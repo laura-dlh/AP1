@@ -1,4 +1,4 @@
-from yogi import scan
+from yogi import scan, read
 
 antes = -1
 actual = -1
@@ -20,7 +20,7 @@ while actual != -1: # 5 4 3 2 1
         # antes y actual=x
         #actual=x
         futuro = scan(int)
-        if actual + futuro < antes + actual:
+        if actual + futuro < antes + actual: 
             resultado_actual = 1 
             if resultado_antes == 1:
                 resultado_final += 1
@@ -32,5 +32,10 @@ while actual != -1: # 5 4 3 2 1
         
     contador +=1
 
+def main():
+    n = read(int)
+    for _ in range (n):
+        print(resultado_final)
 
-print(resultado_final)
+#solo hace falta verificar que xi-1>xi+1 porque xi-1 + xi > xi + xi+1 se tacha xi
+# y si pones que cuando n=-1 return -1 directamente para asegurar
